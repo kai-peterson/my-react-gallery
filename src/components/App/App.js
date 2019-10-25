@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import GalleryList from '../GalleryList/GalleryList'
 import './App.css';
 
 class App extends Component {
+  state = {
+    gallery: [
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
+    ],
+  }
+
   render() {
     return (
       <div className="App">
@@ -9,8 +25,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <GalleryList gallery={this.state.gallery}/>
       </div>
     );
   }
