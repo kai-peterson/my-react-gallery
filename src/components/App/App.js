@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import GalleryList from '../GalleryList/GalleryList'
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
   state = {
-    gallery: [
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-      {image: 'images/goat_small.jpg', description: 'A small goat', likes: 0},
-    ],
+    gallery: [],
+  }
+
+  componentDidMount() {
+    this.getImages();
+  }
+
+  getImages = () => {
+    axios.get('/gallery')
+      .then( (response) => {
+        this.setState({
+          gallery: response.data
+        })
+      })
+      .catch( (error) => {
+        console.log('error in GET', error);
+      })
   }
 
   render() {
