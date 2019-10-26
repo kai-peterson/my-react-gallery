@@ -66,6 +66,16 @@ class App extends Component {
       })
   }
 
+  handleDelete = (id) => () => {
+    axios.delete(`/gallery/${id}`)
+      .then( (response) => {
+        this.getImages();
+      })
+      .catch( (error) => {
+        console.log('error in DELETE', error);
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -74,10 +84,15 @@ class App extends Component {
           <GalleryForm 
             handleInput={this.handleInput} 
             handleClick={this.handleClick}
-            newImage={this.state.newImage}/>
+            newImage={this.state.newImage}
+          />
         </header>
         <br/>
-        <GalleryList gallery={this.state.gallery} likeImage={this.likeImage}/>
+        <GalleryList 
+          gallery={this.state.gallery} 
+          likeImage={this.likeImage}
+          handleDelete={this.handleDelete}
+        />
         <pre>{JSON.stringify(this.state.newImage, null, 2)}</pre>
       </div>
     );
