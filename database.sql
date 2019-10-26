@@ -16,3 +16,5 @@ VALUES ('images/goat_small.jpg', 'A small goat', 0),
 ('images/goat_small.jpg', 'A shifty goat', 0);
 
 UPDATE gallery SET likes=1 WHERE id=1;
+
+DELETE FROM gallery WHERE id=1

@@ -6,7 +6,11 @@ class GalleryList extends Component {
   render() {
     return (
       <div className="GalleryList">
-        {this.props.gallery.map( (image) => <GalleryItem image={image} likeImage={this.props.likeImage}/>)}
+        {this.props.gallery.map( (image) => <GalleryItem 
+                                                image={image} 
+                                                likeImage={this.props.likeImage}
+                                                handleDelete={this.props.handleDelete}
+                                            />)}
       </div>
     );
   }
