@@ -43,6 +43,12 @@ class App extends Component {
       .then( (response) => {
         console.log(response);
         this.getImages();
+        this.setState({
+          newImage: {
+            url: '',
+            description: '',
+          }
+        })
       })
       .catch( (error) => {
         console.log('error in POST', error);
@@ -65,7 +71,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of my life</h1>
-          <GalleryForm handleInput={this.handleInput} handleClick={this.handleClick}/>
+          <GalleryForm 
+            handleInput={this.handleInput} 
+            handleClick={this.handleClick}
+            newImage={this.state.newImage}/>
         </header>
         <br/>
         <GalleryList gallery={this.state.gallery} likeImage={this.likeImage}/>
