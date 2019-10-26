@@ -1,0 +1,14 @@
+.toggleDescripton {
+    display: table;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    text-align: center;
+    margin: 2px auto;
+}
+
+.descriptionText {
+    display: table-cell;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
