@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
+import './GalleryItem.css'
 
 class GalleryItem extends Component {
+    state = {
+        toggle: true
+    }
+
+    toggleImage = () => {
+        this.setState({toggle: !this.state.toggle})
+    }
+
     render() {
         return (
             <div className="image">
-                <img src={this.props.image.path} />
+                {this.state.toggle === true ?
+                    <><img onClick={this.toggleImage} src={this.props.image.path} /><br/></>:
+                    <div onClick={this.toggleImage} className="toggleDescripton"><span className="descriptionText">{this.props.image.description}</span></div>
+                }
+                <button onClick={() => this.props.likeImage(this.props.image.id, this.props.image.likes)}>Like!</button>
                 <br />
                 Description: {this.props.image.description}
-                <br /> 
+                <br />
                 Likes: {this.props.image.likes}
             </div>
         );
