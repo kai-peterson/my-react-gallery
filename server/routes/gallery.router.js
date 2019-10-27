@@ -30,6 +30,28 @@ router.get('/', (req, res) => {
         })
 }); // END GET Route
 
+// GET Route
+router.get('/:index', (req, res) => {
+    let queryText;
+    if (req.params.index === '0') {
+        queryText = `SELECT * FROM gallery ORDER BY id`;
+    }
+    else if (req.params.index === '1') {
+        queryText = `SELECT * FROM gallery ORDER BY likes DESC, id`;
+    }
+    else if (req.params.index === '2') {
+        queryText = `SELECT * FROM gallery ORDER BY LOWER(description)`;
+    }
+    
+    pool.query(queryText)
+        .then( (result) => {
+            res.send(result.rows);
+        })
+        .catch( (error) => {
+            res.sendStatus(500);
+        })
+}); // END GET Route
+
 // POST Route
 router.post('/', (req, res) => {
     const queryText = `INSERT INTO gallery (path, description, likes) VALUES ($1, $2, 0)`;

@@ -17,9 +17,9 @@ class GalleryItem extends Component {
     render() {
         return (
             <div className="image">
-                <Paper className="paperOutline" elevation="12">
+                <Paper className="paperOutline" elevation={12}>
                     {this.state.toggle === true ?
-                        <><img onClick={this.toggleImage} src={this.props.image.path} /></> :
+                        <img key={this.props.image.id} onClick={this.toggleImage} src={this.props.image.path} alt=""/> :
                         <div onClick={this.toggleImage} className="toggleDescripton"><span className="descriptionText">{this.props.image.description}</span></div>
                     }
                     <div className="interactions">
@@ -33,7 +33,6 @@ class GalleryItem extends Component {
                             <FavoriteRoundedIcon />
                         </Fab>
                     </div>
-                    {/* <button onClick={this.props.handleDelete(this.props.image.id)} className="delete">Delete</button> */}
                 </Paper>
             </div>
         );

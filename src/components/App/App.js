@@ -6,6 +6,7 @@ import GalleryForm from '../GalleryForm/GalleryForm';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../Header/Header'
 import Swal from 'sweetalert2'
+import Footer from '../Footer/Footer'
 
 class App extends Component {
   state = {
@@ -13,15 +14,19 @@ class App extends Component {
     newImage: {
       url: '',
       description: '',
-    }
+    },
+    sortingValue: '0',
   }
 
   componentDidMount() {
-    this.getImages();
+    this.getImagesSorted(this.state.sortingValue);
   }
 
-  getImages = () => {
-    axios.get('/gallery')
+  getImagesSorted = (index) => {
+    this.setState({
+      sortingValue: index,
+    })
+    axios.get(`/gallery/${index}`)
       .then((response) => {
         this.setState({
           gallery: response.data
@@ -45,7 +50,7 @@ class App extends Component {
     axios.post('/gallery', this.state.newImage)
       .then((response) => {
         console.log(response);
-        this.getImages();
+        this.getImagesSorted(this.state.sortingValue);
         this.setState({
           newImage: {
             url: '',
@@ -62,7 +67,7 @@ class App extends Component {
     let incLikes = likes + 1;
     axios.put(`/gallery/like/${id}`, { likes: incLikes })
       .then((response) => {
-        this.getImages();
+        this.getImagesSorted(this.state.sortingValue);
       })
       .catch((error) => {
         console.log('error in PUT', error);
@@ -87,7 +92,7 @@ class App extends Component {
               'Your file has been deleted.',
               'success'
             )
-            this.getImages();
+            this.getImagesSorted(this.state.sortingValue);
           })
           .catch((error) => {
             console.log('error in DELETE', error);
@@ -113,7 +118,7 @@ class App extends Component {
               likeImage={this.likeImage}
               handleDelete={this.handleDelete}
             />
-            <pre>{JSON.stringify(this.state.newImage, null, 2)}</pre>
+            <Footer getImagesSorted={this.getImagesSorted} />
           </div>
         </div>
       </>
