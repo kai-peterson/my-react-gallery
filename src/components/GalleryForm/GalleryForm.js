@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Fab from '@material-ui/core/Fab';
-import { makeStyles } from '@material-ui/core/styles';
 import AddAPhotoRoundedIcon from '@material-ui/icons/AddAPhotoRounded';
 import TextField from '@material-ui/core/TextField';
 import './GalleryForm.css'

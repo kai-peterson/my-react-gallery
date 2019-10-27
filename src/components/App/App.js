@@ -84,17 +84,19 @@ class App extends Component {
         <CssBaseline />
         <div className="App">
           <Header />
-          <GalleryForm
+          <div className="body">
+            <GalleryForm
               handleInput={this.handleInput}
               handleClick={this.handleClick}
               newImage={this.state.newImage}
             />
-          <GalleryList
-            gallery={this.state.gallery}
-            likeImage={this.likeImage}
-            handleDelete={this.handleDelete}
-          />
-          <pre>{JSON.stringify(this.state.newImage, null, 2)}</pre>
+            <GalleryList
+              gallery={this.state.gallery}
+              likeImage={this.likeImage}
+              handleDelete={this.handleDelete}
+            />
+            <pre>{JSON.stringify(this.state.newImage, null, 2)}</pre>
+          </div>
         </div>
       </>
     );
