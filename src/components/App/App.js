@@ -69,13 +69,17 @@ class App extends Component {
   }
 
   handleDelete = (id) => () => {
-    axios.delete(`/gallery/${id}`)
+    let confirmation = window.confirm('Are you sure you want to delete this post?');
+
+    if (confirmation) {
+      axios.delete(`/gallery/${id}`)
       .then((response) => {
         this.getImages();
       })
       .catch((error) => {
         console.log('error in DELETE', error);
       })
+    }
   }
 
   render() {
