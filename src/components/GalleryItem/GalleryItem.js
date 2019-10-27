@@ -23,10 +23,12 @@ class GalleryItem extends Component {
                         <div onClick={this.toggleImage} className="toggleDescripton"><span className="descriptionText">{this.props.image.description}</span></div>
                     }
                     <div className="interactions">
-                        <Fab size="small" onClick={this.props.handleDelete(this.props.image.id)} disabled aria-label="delete" className="deleteIcon">
+                        <Fab size="small" onClick={this.props.handleDelete(this.props.image.id)} aria-label="delete" className="deleteIcon">
                             <DeleteIcon />
                         </Fab>
-                        <div className="likeText">{this.props.image.likes} People liked this!</div>
+                        {this.props.image.likes === 0 && <div className="firstLikeText">Be the first to Like this image!</div>}
+                        {this.props.image.likes === 1 && <div className="likeText">{this.props.image.likes} Person liked this!</div>}
+                        {this.props.image.likes > 1 && <div className="likeText">{this.props.image.likes} People liked this!</div>}
                         <Fab size="small" onClick={() => this.props.likeImage(this.props.image.id, this.props.image.likes)} color="secondary" aria-label="edit" className="favoriteIcon">
                             <FavoriteRoundedIcon />
                         </Fab>

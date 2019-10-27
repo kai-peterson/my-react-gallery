@@ -40,6 +40,13 @@
     font-weight: bold;
 }
 
+.firstLikeText {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    max-width: 60%;
+}
+
 .interactions {
     height: 55px;
     margin-top: 5px;
