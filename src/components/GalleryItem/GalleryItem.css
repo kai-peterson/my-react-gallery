@@ -14,7 +14,9 @@
     display: table-cell;
     vertical-align: middle;
     word-wrap: break-word;
+    text-align: center;
     font-size: 20px;
+    padding: 10px;
 }
 
 .paperOutline {

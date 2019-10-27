@@ -5,6 +5,7 @@ import axios from 'axios';
 import GalleryForm from '../GalleryForm/GalleryForm';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../Header/Header'
+import Swal from 'sweetalert2'
 
 class App extends Component {
   state = {
@@ -69,17 +70,30 @@ class App extends Component {
   }
 
   handleDelete = (id) => () => {
-    let confirmation = window.confirm('Are you sure you want to delete this post?');
-
-    if (confirmation) {
-      axios.delete(`/gallery/${id}`)
-      .then((response) => {
-        this.getImages();
-      })
-      .catch((error) => {
-        console.log('error in DELETE', error);
-      })
-    }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        axios.delete(`/gallery/${id}`)
+          .then((response) => {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+            this.getImages();
+          })
+          .catch((error) => {
+            console.log('error in DELETE', error);
+          })
+      }
+    })
   }
 
   render() {

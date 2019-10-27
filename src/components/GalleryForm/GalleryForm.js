@@ -16,6 +16,7 @@ class GalleryForm extends Component {
                     fullWidth
                     margin="normal"
                     variant="outlined"
+                    value={this.props.newImage.url}
                 />
                 <TextField
                     onChange={this.props.handleInput('description')}
@@ -25,6 +26,7 @@ class GalleryForm extends Component {
                     variant="outlined"
                     multiline
                     rowsMax="2"
+                    value={this.props.newImage.description}
                 />
                 {/* <input onChange={this.props.handleInput('url')} type="url" placeholder="Image URL" value={this.props.newImage.url} /> */}
                 {/* <input onChange={this.props.handleInput('description')} type="text" placeholder="Description" value={this.props.newImage.description} /> */}
