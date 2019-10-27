@@ -1,0 +1,13 @@
+.footer {
+    background-color: black !important;
+}
+
+.footerTab {
+    color: white !important;
+}
+
+.footerLabel {
+    color: white;
+    font-size: 15px;
+    padding-top: 10px;
+}

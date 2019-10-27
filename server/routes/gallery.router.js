@@ -19,8 +19,18 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 // GET Route
-router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM gallery ORDER BY id`;
+router.get('/:index', (req, res) => {
+    let queryText;
+    if (req.params.index === '0') {
+        queryText = `SELECT * FROM gallery ORDER BY id`;
+    }
+    else if (req.params.index === '1') {
+        queryText = `SELECT * FROM gallery ORDER BY likes DESC, id`;
+    }
+    else if (req.params.index === '2') {
+        queryText = `SELECT * FROM gallery ORDER BY LOWER(description)`;
+    }
+    
     pool.query(queryText)
         .then( (result) => {
             res.send(result.rows);
