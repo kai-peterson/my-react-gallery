@@ -1,0 +1,17 @@
+.outlined-full-width {
+    max-width: 25vw;
+}
+
+.outlined-dense-multiline {
+    margin: 8px !important;
+    width: 25vw;
+}
+
+.addPicButton {
+    margin-left: 10px !important;
+    margin-top: 7px !important;
+}
+
+.inputs {
+    padding-top: 15px;
+}

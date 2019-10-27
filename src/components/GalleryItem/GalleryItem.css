@@ -1,14 +1,53 @@
 .toggleDescripton {
     display: table;
-    width: 100px;
-    height: 100px;
-    background-color: lightblue;
+    width: 290px;
+    height: 200px;
     text-align: center;
-    margin: 2px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+      
 }
 
 .descriptionText {
     display: table-cell;
     vertical-align: middle;
     word-wrap: break-word;
+    font-size: 20px;
+}
+
+.paperOutline {
+    padding: 0;
+    background-image: linear-gradient( rgba(31, 218, 218, 0.858), rgb(219, 243, 252));
+}
+
+.deleteIcon {
+    float: left;
+    margin-left: 10px !important;
+    margin-top: 2px;
+}
+
+.favoriteIcon {
+    float: right;
+    margin-right: 10px !important;
+}
+
+.likeText {
+    display: inline-block;
+    font-size: 17px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.firstLikeText {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    max-width: 60%;
+}
+
+.interactions {
+    height: 55px;
+    margin-top: 5px;
 }
