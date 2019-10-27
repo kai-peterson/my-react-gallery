@@ -3,6 +3,8 @@ import GalleryList from '../GalleryList/GalleryList'
 import './App.css';
 import axios from 'axios';
 import GalleryForm from '../GalleryForm/GalleryForm';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from '../Header/Header'
 
 class App extends Component {
   state = {
@@ -19,12 +21,12 @@ class App extends Component {
 
   getImages = () => {
     axios.get('/gallery')
-      .then( (response) => {
+      .then((response) => {
         this.setState({
           gallery: response.data
         })
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log('error in GET', error);
       })
   }
@@ -40,7 +42,7 @@ class App extends Component {
 
   handleClick = () => {
     axios.post('/gallery', this.state.newImage)
-      .then( (response) => {
+      .then((response) => {
         console.log(response);
         this.getImages();
         this.setState({
@@ -50,51 +52,51 @@ class App extends Component {
           }
         })
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log('error in POST', error);
       })
-  } 
+  }
 
   likeImage = (id, likes) => {
     let incLikes = likes + 1;
-    axios.put(`/gallery/like/${id}`, {likes: incLikes})
-      .then( (response) => {
+    axios.put(`/gallery/like/${id}`, { likes: incLikes })
+      .then((response) => {
         this.getImages();
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log('error in PUT', error);
       })
   }
 
   handleDelete = (id) => () => {
     axios.delete(`/gallery/${id}`)
-      .then( (response) => {
+      .then((response) => {
         this.getImages();
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log('error in DELETE', error);
       })
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
-          <GalleryForm 
-            handleInput={this.handleInput} 
-            handleClick={this.handleClick}
-            newImage={this.state.newImage}
+      <>
+        <CssBaseline />
+        <div className="App">
+          <Header />
+          <GalleryForm
+              handleInput={this.handleInput}
+              handleClick={this.handleClick}
+              newImage={this.state.newImage}
+            />
+          <GalleryList
+            gallery={this.state.gallery}
+            likeImage={this.likeImage}
+            handleDelete={this.handleDelete}
           />
-        </header>
-        <br/>
-        <GalleryList 
-          gallery={this.state.gallery} 
-          likeImage={this.likeImage}
-          handleDelete={this.handleDelete}
-        />
-        <pre>{JSON.stringify(this.state.newImage, null, 2)}</pre>
-      </div>
+          <pre>{JSON.stringify(this.state.newImage, null, 2)}</pre>
+        </div>
+      </>
     );
   }
 }
