@@ -2,6 +2,9 @@
 
 Simple Photo Gallery made with React and Material-UI
 
+[Top of Page](https://imgur.com/Xcqt2ie)
+[Bottom of Page](https://imgur.com/AWb367l)
+
 ## Description
 
 Features:
