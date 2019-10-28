@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../Header/Header'
 import Swal from 'sweetalert2'
 import Footer from '../Footer/Footer'
+import HeaderTabs from '../HeaderTabs/HeaderTabs'
 
 class App extends Component {
   state = {
@@ -16,6 +17,7 @@ class App extends Component {
       description: '',
     },
     sortingValue: '0',
+    mode: 'add',
   }
 
   componentDidMount() {
@@ -107,6 +109,7 @@ class App extends Component {
         <CssBaseline />
         <div className="App">
           <Header />
+          <HeaderTabs />
           <div className="body">
             <GalleryForm
               handleInput={this.handleInput}
@@ -118,8 +121,8 @@ class App extends Component {
               likeImage={this.likeImage}
               handleDelete={this.handleDelete}
             />
-            <Footer getImagesSorted={this.getImagesSorted} />
           </div>
+          <Footer getImagesSorted={this.getImagesSorted} />
         </div>
       </>
     );

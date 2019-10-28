@@ -17,6 +17,7 @@ class Footer extends Component {
     render() {
         return (
             <div className="footerDiv">
+                <span className="sortText">Sort By:</span>
                 <Paper className="footer">
                     <Tabs
                         className="tabBar"

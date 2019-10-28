@@ -1,6 +1,7 @@
 .GalleryList {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 15px;
 }
 
 .image {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Header.css'
 
-class GalleryItem extends Component {
+class Header extends Component {
     render() {
         return (
             <header className="App-header">
@@ -11,4 +11,4 @@ class GalleryItem extends Component {
     }
 }
 
-export default GalleryItem;
+export default Header;
