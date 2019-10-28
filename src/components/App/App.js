@@ -109,7 +109,7 @@ class App extends Component {
         <CssBaseline />
         <div className="App">
           <Header />
-          <HeaderTabs />
+          {/* <HeaderTabs /> */}
           <div className="body">
             <GalleryForm
               handleInput={this.handleInput}
