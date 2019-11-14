@@ -2,8 +2,10 @@
 
 Simple Photo Gallery made with React and Material-UI
 
-Fully-functional deployed site: https://my-react-gallery.herokuapp.com/
+Deployed site: https://my-react-gallery.herokuapp.com/
+- Click the link above for a fully-functional version of the app
 - If images don't load, try adding an image and they should pop up
+
 
 ## Description
 
