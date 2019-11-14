@@ -3,7 +3,7 @@
 Simple Photo Gallery made with React and Material-UI
 
 Deployed site: https://my-react-gallery.herokuapp.com/
-- if images don't load, try adding an image and they should all pop up
+- If images don't load, try adding an image and they should pop up
 
 [Image: Top of Page](https://imgur.com/Xcqt2ie) <br />
 [Image: Showing Toggled Descriptions](https://imgur.com/qM3uqiD) <br />
