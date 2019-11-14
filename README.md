@@ -23,9 +23,7 @@ Features:
 [Image: Showing Toggled Descriptions](https://imgur.com/qM3uqiD) <br />
 [Image: Bottom of Page](https://imgur.com/AWb367l)
 
-### Prerequisites
-
-Link to software that is required to install the app (e.g. node).
+### Tech
 
 - React
 - Material-ui
