@@ -4,7 +4,7 @@ Simple Photo Gallery made with React and Material-UI
 
 Deployed site: https://my-react-gallery.herokuapp.com/
 - Click the link above for a fully-functional version of the app
-- If images don't load, try adding an image and they should pop up
+- If images don't load after a minute, try adding an image and they should pop up. 
 
 
 ## Description
