@@ -6,7 +6,6 @@ Deployed site: https://my-react-gallery.herokuapp.com/
 - If images don't load, try adding an image and they should pop up
 
 [Imgur](https://i.imgur.com/Xcqt2ie.png)
-
 [Image: Top of Page](https://imgur.com/Xcqt2ie) <br />
 [Image: Showing Toggled Descriptions](https://imgur.com/qM3uqiD) <br />
 [Image: Bottom of Page](https://imgur.com/AWb367l)
