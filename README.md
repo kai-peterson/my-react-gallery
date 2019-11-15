@@ -1,6 +1,6 @@
 # Project Name
 
-Simple Photo Gallery made with React and Material-UI
+Photo Gallery made with React and Material-UI
 
 Deployed site: https://my-react-gallery.herokuapp.com/
 - Click the link above for a fully-functional version of the app
@@ -9,9 +9,9 @@ Deployed site: https://my-react-gallery.herokuapp.com/
 
 ## Description
 
-I built and styled this project in one weekend as my first project in React. A month before I started this project, I only knew vanilla javascript, and in the last month I learned how to write and deploy a full stack React app using node and postgresSQL.
+I built and styled this project in one weekend as my first project in React. A month before I started this project, I only knew vanilla javascript. In one month I learned how to write and deploy this full stack React app using node and postgresSQL.
 
-The gallery allows you to add photos and descriptions, as well as like photos. I also added a feature to sort the photos by date added (id), likes, and description (alphabetical)
+The gallery allows you to add photos and descriptions, as well as like photos. I also added a feature to sort the photos by date added (id), likes, and description (alphabetical).
 
 Features:
 - Add photo
